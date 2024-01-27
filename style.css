@@ -1,0 +1,401 @@
+/*  (-CSS reset- Credit: Josh Comeau ) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*  CSS Reset End */
+
+:root {
+  --primary-clr: hsl(227, 35%, 25%);
+  --secondary-clr: hsl(225, 20%, 60%);
+
+  --bg-clr: hsl(230, 100%, 99%);
+  --card-bg-clr: hsl(0, 0%, 100%);
+
+  --ff-base: "Manrope", sans-serif;
+  --fw-semi-bold: 600;
+  --fw-extra-bold: 800;
+}
+
+body {
+  background-image: url(images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100vw 440px;
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-semi-bold);
+  background-color: var(--bg-clr);
+  color: var(--primary-clr);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  background-image: url(images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 150px;
+
+  margin-block: 40px;
+}
+
+#header-title {
+  font-size: 1.75rem;
+  font-weight: var(--fw-extra-bold);
+}
+
+#header-description {
+  font-size: 0.875rem;
+  font-weight: var(--fw-semi-bold);
+}
+
+/* Card */
+
+.test {
+  display: flex;
+  justify-content: center;
+}
+
+#card {
+  background-color: var(--card-bg-clr);
+  width: 33.75rem;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px 0 rgb(200, 200, 200);
+}
+
+/* Card Header */
+
+#card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#num-of-views-container {
+  display: flex;
+  gap: 5px;
+
+  font-size: 0.875rem;
+  font-weight: var(--fw-semi-bold);
+  color: grey;
+  letter-spacing: 2px;
+}
+
+#price-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+#price-wrapper.responsive {
+  display: none;
+}
+
+#price, #responsive-price {
+  font-size: 34px;
+  font-weight: var(--fw-extra-bold);
+}
+
+/* Range Slider */
+
+.slidecontainer {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: url(images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50px;
+  box-shadow: 0 10px 5px 4px hsl(174, 64%, 74%);
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url(images/icon-slider.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Toggle Wrapper */
+
+#toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.billing-option {
+  font-size: 12px;
+  font-weight: var(--fw-semi-bold);
+  color: var(--secondary-clr);
+}
+
+.billing-discount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: var(--fw-semi-bold);
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+  padding-inline: 8px;
+  border-radius: 50px;
+}
+
+.billing-discount.responsive {
+  display: none;
+}
+
+/* Toggle Switch */
+
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+}
+
+#switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(224, 65%, 95%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#slider:hover {
+  background-color: hsl(174, 86%, 45%);
+}
+
+#slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + #slider {
+  background-color: hsl(223, 50%, 87%);
+}
+
+input:focus + #slider {
+  box-shadow: 0 0 1px hsl(223, 50%, 87%);
+}
+
+input:checked + #slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+.slider-round {
+  border-radius: 34px;
+}
+
+.slider-round:before {
+  border-radius: 50%;
+}
+
+/* Card horizontal line */
+
+#card-hr {
+  margin-inline: -40px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: rgb(213, 213, 213);
+  height: 0.5px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#benefits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.benefits-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benefits {
+  font-size: 12px;
+  font-weight: var(--fw-semi-bold);
+  color: var(--secondary-clr);
+}
+
+#start-my-trial-btn {
+  border: none;
+  width: 10.625rem;
+  height: 40px;
+  background-color: var(--primary-clr);
+  font-size: 12px;
+  font-weight: var(--fw-semi-bold);
+  color: white;
+  border-radius: 1.25rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #header-title {
+    font-size: 1.375rem;
+  }
+
+  #header-description {
+    font-size: 0.75rem;
+  }
+
+  #card {
+    width: 21.875rem;
+  }
+
+  #card-header {
+    flex-direction: column;
+  }
+
+  #price-wrapper {
+    display: none;
+  }
+
+  #price-wrapper.responsive {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 30px;
+  }
+
+  #toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+  }
+
+  .billing-discount {
+    display: none;
+  }
+
+  .billing-discount.responsive {      /*-=------------------*/
+    display: block;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #benefits-container {
+    align-items: center;
+    gap: 10px;
+  }
+}
